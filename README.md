@@ -68,7 +68,7 @@ In recent years, the performance of object detection algorithms based on convolu
   cd RefineDet
   python modified_refinedet/test/refinedet_test_MobileNet.py
 
-#### 3.1 test-dev2017
+#### 3.2 test-dev2017
 - Set model and deploy path to proper location
   vim modified_refinedet/test/refinedet_test-dev.py
   
