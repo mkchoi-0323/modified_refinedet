@@ -1,4 +1,4 @@
-# A fast and accurate real-time object detector for embedded plaforms
+## A fast and accurate real-time object detector for embedded plaforms
 
 #### submit to acmmm19
 
@@ -19,7 +19,7 @@ In recent years, the performance of object detection algorithms based on convolu
   
 - Fllowing step to train and test with original RefineDet using COCO dataset [git (link)](http://cocodataset.org/#home)
 
-#### 1.3 Rebuid for Modified RefineDet
+#### 1.3 Rebuild for Modified RefineDet
 - Download requirements from this repository  
   git clone https://github.com/mkchoi-0323/modified_refinedet.git
 
