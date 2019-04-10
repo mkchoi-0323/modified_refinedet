@@ -41,14 +41,14 @@ In recent years, the performance of object detection algorithms based on convolu
   mkdir RefineDet/models/MobileNet/coco/refinedet_mobilenetv1_320x320
   cp modified_refinedet/heads/MobileNetV1_COCO_320.py RefineDet/models/MobileNet/coco/refinedet_mobilenetv1_320x320/
 
-- Download pre-trained backbone (link)
+- Download pre-trained backbone ([link](https://drive.google.com/drive/folders/1yMk-NwEisESKt6c8emIvmi1SCYFI0VbJ?usp=sharing))
 
 - Copy pre-trained backbone to model path
-  cp modified_fefinedet/pretrained_backbone/mobielnetv1.caffemodel RefineDet/models/MobileNet/  
+  cp modified_refinedet/pretrained_backbones/mobielnet.caffemodel RefineDet/models/MobileNet/  
 
-- Copy backbone interface to original RefineDet
+- Copy model interface to original RefineDet
   mv RefineDet/python/caffe/model_libs.py RefineDet/python/caffe/model_libs.py.backup 
-  mv modified_refinedet/heads/model_libs_MobileNetV1.py modified_refinedet/heads/RefineDet/python/caffe/model_libs.py
+  cp modified_refinedet/heads/model_libs_MobileNetV1.py RefineDet/python/caffe/model_libs.py
   
 - Run training interface
   cd RefineDet
@@ -65,7 +65,7 @@ In recent years, the performance of object detection algorithms based on convolu
   mv modified_refinedet/test/lib/dataset/coco.py RefineDet/test/lib/dataset/
   mv modified_refinedet/refinedet_test_MobileNet.py
 
-- Download pre-trained models (links)
+- Download pre-trained models ([link](https://drive.google.com/open?id=1NrC9p4R-z4HmN29A13boo_srfgwfmLah))
 
 - Set model and deploy path to proper location
 
