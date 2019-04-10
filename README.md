@@ -41,6 +41,11 @@ In recent years, the performance of object detection algorithms based on convolu
   mkdir RefineDet/models/MobileNet/coco/refinedet_mobilenetv1_320x320
   cp modified_refinedet/heads/MobileNetV1_COCO_320.py RefineDet/models/MobileNet/coco/refinedet_mobilenetv1_320x320/
 
+- Download pre-trained backbone (link)
+
+- Copy pre-trained backbone to model path
+  cp modified_fefinedet/pretrained_backbone/mobielnetv1.caffemodel RefineDet/models/MobileNet/  
+
 - Copy backbone interface to original RefineDet
   mv RefineDet/python/caffe/model_libs.py RefineDet/python/caffe/model_libs.py.backup 
   mv modified_refinedet/heads/model_libs_MobileNetV1.py modified_refinedet/heads/RefineDet/python/caffe/model_libs.py
@@ -60,6 +65,10 @@ In recent years, the performance of object detection algorithms based on convolu
   mv modified_refinedet/test/lib/dataset/coco.py RefineDet/test/lib/dataset/
   mv modified_refinedet/refinedet_test_MobileNet.py
 
+- Download pre-trained models (links)
+
+- Set model and deploy path to proper location
+
 #### 3.1 val2017
 - Set model and deploy path to proper location
   vim modified_refinedet/test/refinedet_test_MobileNet.py
@@ -75,3 +84,5 @@ In recent years, the performance of object detection algorithms based on convolu
 - Run test
   cd RefineDet
   python modified_refinedet/test/refinedet_test-dev.py
+  
+
