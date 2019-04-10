@@ -1,0 +1,27 @@
+train_net: "models/VGGNet/coco/refinedet_vgg16_512x512/train.prototxt"
+test_net: "models/VGGNet/coco/refinedet_vgg16_512x512/test.prototxt"
+test_iter: 10000
+test_interval: 10000
+base_lr: 0.0010000000475
+display: 10
+max_iter: 400000
+lr_policy: "multistep"
+gamma: 0.10000000149
+momentum: 0.899999976158
+weight_decay: 0.000500000023749
+snapshot: 10000
+snapshot_prefix: "models/VGGNet/coco/refinedet_vgg16_512x512/coco_refinedet_vgg16_512x512"
+solver_mode: GPU
+device_id: 2
+debug_info: false
+snapshot_after_train: true
+test_initialization: false
+average_loss: 10
+stepvalue: 280000
+stepvalue: 360000
+stepvalue: 400000
+iter_size: 1
+type: "SGD"
+eval_type: "detection"
+ap_version: "11point"
+
