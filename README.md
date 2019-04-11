@@ -1,4 +1,4 @@
-## A fast and accurate real-time object detector for embedded plaforms
+## A fast and accurate real-time convolutional object detector for embedded plaforms
 
 ##### submit to acmmm19
 
