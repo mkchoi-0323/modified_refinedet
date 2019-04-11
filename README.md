@@ -17,56 +17,56 @@
 
 #### 1.2 ReifineDet
 - Install original RefineDet source from [git (link)](https://github.com/sfzhang15/RefineDet)  
-  git clone https://github.com/sfzhang15/RefineDet.git
+  _git clone https://github.com/sfzhang15/RefineDet.git_
   
 - Fllowing step to train and test with original RefineDet using COCO dataset [git (link)](http://cocodataset.org/#home)
 
 #### 1.3 Rebuild for Modified RefineDet
 - Download requirements from this repository  
-  git clone https://github.com/mkchoi-0323/modified_refinedet.git
+  _git clone https://github.com/mkchoi-0323/modified_refinedet.git_
 
 - Rebuild caffe for original RefineDet with new caffe layers (depthwise convolution and axpy laer)  
-  cd RefineDet  
-  make clean  
+  _cd RefineDet_  
+  _make clean_  
   1. copy every .cpp and .cu files in addtional_layers  
   2. paste .cpp and .cu files to original RefineDet/src/caffe/layers/  
   3. copy every .hpp files in additional_layers  
   4. paste .hpp files to original RefineDet/include/caffe/layers/  
 
 - Rebuild by caffe compile command  
-  make all -j4
+  _make all -j4_
 
 ### 2. Training
 - Download desired python code to generate head and backbone  
   * For example, you should prepare **MobileNetV1_COCO_320.py** and **model_libs_MobileNetV1.py** to train new model of RefineDet with MobileNetV1 blocks
 
 - Make model path and copy python trainin interface  
-  mkdir RefineDet/models/MobileNet/coco/refinedet_mobilenetv1_320x320  
-  cp modified_refinedet/heads/MobileNetV1_COCO_320.py RefineDet/models/MobileNet/coco/refinedet_mobilenetv1_320x320/
+  _mkdir RefineDet/models/MobileNet/coco/refinedet_mobilenetv1_320x320_  
+  _cp modified_refinedet/heads/MobileNetV1_COCO_320.py RefineDet/models/MobileNet/coco/refinedet_mobilenetv1_320x320/_
 
 - Download pre-trained backbone ([link](https://drive.google.com/drive/folders/1yMk-NwEisESKt6c8emIvmi1SCYFI0VbJ?usp=sharing))
 
 - Copy pre-trained backbone to model path  
-  cp modified_refinedet/pretrained_backbones/mobielnet.caffemodel RefineDet/models/MobileNet/  
+  _cp modified_refinedet/pretrained_backbones/mobielnet.caffemodel RefineDet/models/MobileNet/_
 
 - Copy model interface to original RefineDet  
-  mv RefineDet/python/caffe/model_libs.py RefineDet/python/caffe/model_libs.py.backup   
-  cp modified_refinedet/heads/model_libs_MobileNetV1.py RefineDet/python/caffe/model_libs.py  
+  _mv RefineDet/python/caffe/model_libs.py RefineDet/python/caffe/model_libs.py.backup_   
+  _cp modified_refinedet/heads/model_libs_MobileNetV1.py RefineDet/python/caffe/model_libs.py_  
   
 - Run training interface  
-  cd RefineDet  
-  python models/MobileNet/coco/refinedet_mobilenetv1_320x320/model_libs_MobileNetV1.py  
+  _cd RefineDet_  
+  _python models/MobileNet/coco/refinedet_mobilenetv1_320x320/model_libs_MobileNetV1.py_  
 
 ### 3. Testing
 - Copy dataset loader to original RefineDet interface  
-  mv RefineDet/test/lib/dataset/coco.py RefineDet/test/lib/dataset/coco.py.backup  
-  mv RefineDet/test/lib/dataset/factory.py RefineDet/test/lib/dataset/factory.py.backup  
-  mv modified_refinedet/test/lib/dataset/coco.py RefineDet/test/lib/dataset/  
-  mv modified_refinedet/test/lib/dataset/factory.py RefineDet/test/lib/dataset/  
+  _mv RefineDet/test/lib/dataset/coco.py RefineDet/test/lib/dataset/coco.py.backup_  
+  _mv RefineDet/test/lib/dataset/factory.py RefineDet/test/lib/dataset/factory.py.backup_  
+  _mv modified_refinedet/test/lib/dataset/coco.py RefineDet/test/lib/dataset/_  
+  _mv modified_refinedet/test/lib/dataset/factory.py RefineDet/test/lib/dataset/_  
   
 - Copy testing interface  
-  mv modified_refinedet/test/lib/dataset/coco.py RefineDet/test/lib/dataset/  
-  mv modified_refinedet/refinedet_test_MobileNet.py  
+  _mv modified_refinedet/test/lib/dataset/coco.py RefineDet/test/lib/dataset/_  
+  _mv modified_refinedet/refinedet_test_MobileNet.py_  
 
 - Download pre-trained models ([link](https://drive.google.com/open?id=1NrC9p4R-z4HmN29A13boo_srfgwfmLah))
 
@@ -74,19 +74,19 @@
 
 #### 3.1 val2017
 - Set model and deploy path to proper location  
-  vim modified_refinedet/test/refinedet_test_MobileNet.py
+  _vim modified_refinedet/test/refinedet_test_MobileNet.py_
 
 - Run test  
-  cd RefineDet  
-  python modified_refinedet/test/refinedet_test_MobileNet.py
+  _cd RefineDet_  
+  _python modified_refinedet/test/refinedet_test_MobileNet.py_
 
 #### 3.2 test-dev2017
 - Set model and deploy path to proper location  
-  vim modified_refinedet/test/refinedet_test-dev.py
+  _vim modified_refinedet/test/refinedet_test-dev.py_
   
 - Run test  
-  cd RefineDet  
-  python modified_refinedet/test/refinedet_test-dev.py
+  _cd RefineDet_  
+  _python modified_refinedet/test/refinedet_test-dev.py_
   
 ### Experiments
 <img src="./imgs/figure1.png" width="500" height="350"> 
