@@ -8,9 +8,6 @@
 ### Networks Overview
 <img src="./imgs/figure2.png" width="500" height="400">
 
-### Experiment
-<img src="./imgs/figure1.png" width="500" height="400">
-
 ### 1. Installation
 #### 1.1 Requirement
 - Ubuntu 16.04
@@ -91,4 +88,5 @@
   cd RefineDet  
   python modified_refinedet/test/refinedet_test-dev.py
   
-
+### Experiments
+<img src="./imgs/figure1.png" width="500" height="350">
