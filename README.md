@@ -38,7 +38,7 @@
 
 ### 2. Training
 - Download desired python code to generate head and backbone  
-  * For example, you should prepare **MobileNetV1_COCO_320.py** and **model_libs_MobileNetV1.py** for RefineDet with MobileNetV1
+  * For example, you should prepare **MobileNetV1_COCO_320.py** and **model_libs_MobileNetV1.py** to train new model of RefineDet with MobileNetV1 blocks
 
 - Make model path and copy python trainin interface  
   mkdir RefineDet/models/MobileNet/coco/refinedet_mobilenetv1_320x320  
