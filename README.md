@@ -89,4 +89,5 @@
   python modified_refinedet/test/refinedet_test-dev.py
   
 ### Experiments
-<img src="./imgs/figure1.png" width="500" height="350">
+<img src="./imgs/figure1.png" width="500" height="350"> 
+##### Accuracy (mAP) vs. Speed (fps) on MS-COCO dataset. Our models (red) and former models (purple)
