@@ -5,9 +5,6 @@
 ### Abstract
 ###### Refinement detector (RefineDet) is a state-of-the-art model in object detection that has been developed and refined based on high-end GPU systems. In this study, we discovered that the speed of models developed in high-end GPU systems is inconsistent with that in embedded systems. In other words, the fastest model that operates on high-end GPU systems may not be the fastest model on embedded boards. To determine the reason for this phenomenon, we performed several experiments on RefineDet using various backbone architectures on three different platforms: NVIDIA Titan XP GPU system, Drive PX2 board, and Jetson Xavier board. Finally, we achieved real-time performances (approximately 20 fps) based on the experiments on AI edge platforms such as NVIDIA Drive PX2 and Jetson Xavier boards. We believe that our current study would serve as a good reference for developers who wish to apply object detection algorithms to AI edge computing hardwares. The complete code and models are publicly available on [the web (link)](https://github.com/mkchoi-0323/modified_refinedet/).
 
-### Networks Overview
-<img src="./imgs/figure2.png" width="500" height="400">
-
 ### 1. Installation
 #### 1.1 Requirement
 - Ubuntu 16.04
@@ -88,7 +85,3 @@
   _cd RefineDet_  
   _python modified_refinedet/test/refinedet_test-dev.py_
   
-### Experiments
-<img src="./imgs/figure1.png" width="500" height="350"> 
-
-##### 
