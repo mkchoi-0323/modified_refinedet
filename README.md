@@ -52,7 +52,7 @@
   
 - Run training interface  
   _cd RefineDet_  
-  _python models/MobileNet/coco/refinedet_mobilenetv1_320x320/model_libs_MobileNetV1.py_  
+  _python models/MobileNet/coco/refinedet_mobilenetv1_320x320/MobileNetV1_COCO_320.py_  
 
 ### 3. Testing
 - Copy dataset loader to original RefineDet interface  
